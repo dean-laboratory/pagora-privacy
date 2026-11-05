@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "models": [
+    {
+      "id": "qwen2.5-0.5b",
+      "displayName": "Qwen2.5 0.5B",
+      "url": "https://huggingface.co/litert-community/Qwen2.5-0.5B-Instruct/resolve/main/Qwen2.5-0.5B-Instruct_multi-prefill-seq_q8_ekv1280.task",
+      "sizeBytes": 576716800,
+      "sha256": "",
+      "promptTemplate": "<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n",
+      "batchSize": 5,
+      "withSubjects": false,
+      "maxTokens": 1280,
+      "minAppVersion": 0,
+      "priority": 0
+    }
+  ]
+}
