@@ -2,14 +2,14 @@
 
 GitHub Pages site for the Pagora app's privacy policy.
 
-- English: https://pqzmggg.github.io/pagora-privacy/ (`index.html`)
-- Korean: https://pqzmggg.github.io/pagora-privacy/ko/ (`ko/index.html`)
+- English: https://dean-laboratory.github.io/pagora-privacy/ (`index.html`)
+- Korean: https://dean-laboratory.github.io/pagora-privacy/ko/ (`ko/index.html`)
 
 Pages setting: Deploy from a branch, `main`, `/ (root)`.
 
 ## On-device AI model list
 
-`models.json` lists the small language models the Android app can download when Gemini Nano is not available.
+`models.json` lists the on-device language models the Android app can download.
 The app checks it once a day and offers an update when the highest-priority model for its version differs from the installed one.
 
 - `id` must change whenever the model changes (books classified by the old `id` are classified again).
