@@ -10,12 +10,12 @@
 <main>
 <nav>English | <a href="ko/" hreflang="ko">한국어</a></nav>
 <h1>Pagora Privacy Policy</h1>
-<p class="meta">Effective date: November 5, 2026</p>
+<p class="meta">Effective date: November 9, 2026</p>
 
 <p>This Privacy Policy describes how the Pagora application for Android (the "Application"), developed by pqzmggg (the "Developer"), handles information in connection with its use. The Application organizes the PDF and ZIP (CBZ) books stored in the user's Google Drive into a library and displays them for reading.</p>
 
 <h2>1. Information Collected by the Developer</h2>
-<p>The Developer does not collect, receive, or have access to any personal information of users. The Developer operates no servers for the Application, and the Application requires no account other than the user's own Google account. All information described in this Policy is processed on the user's device or exchanged directly between the device and Google. The Application contains no advertising, analytics, or crash reporting components.</p>
+<p>The Developer does not collect, receive, or have access to any personal information of users. The Developer operates no servers for the Application, and the Application requires no account other than the user's own Google account. All information described in this Policy is processed on the user's device or exchanged directly between the device and Google. If the user chooses the external AI described in Section 3, information is also exchanged directly between the device and the AI company the user has chosen. The Application contains no advertising, analytics, or crash reporting components.</p>
 
 <h2>2. Google Account and Google Drive Data</h2>
 <p>When the user chooses to connect Google Drive, the Application requests read-only access to the user's Google Drive (the <code>drive.readonly</code> scope) through Google's authorization service. The Application does not receive or store the user's Google password.</p>
@@ -23,40 +23,51 @@
 <ol>
 <li>The names, folder locations, sizes, modification times, checksums, and thumbnail images of PDF and ZIP (CBZ) files, and the names and structure of folders, in order to find books, build the library, and sort books into categories automatically on the device.</li>
 <li>The contents of the files that the user chooses to download, in order to keep them on the device and display their pages. When the user has read most of a volume in a series, the Application may download the next volume of the same series in advance.</li>
-<li>Parts of ZIP (CBZ) files, in order to create cover images.</li>
+<li>The first part of PDF files and parts of ZIP (CBZ) files, in order to create cover images and to read the text at the beginning of books for sorting them.</li>
 </ol>
-<p>To sort books whose category cannot be determined from their file and folder names, the Application may give book titles and folder names to an on-device language model (Gemini Nano provided by the Android system, or a small model that the user chooses to download). This processing takes place entirely on the device; titles are not transmitted to the Developer, to Google, or to any other party.</p>
+<p>To sort books whose category cannot be determined from their file names, the Application reads the text at the beginning of the book (text contained in the PDF, or text read from the cover image by on-device text recognition). The Application may give book titles and this text to an on-device language model (a model that the user chooses to download). This processing takes place entirely on the device; unless the user chooses the external AI described in Section 3, titles and text are not transmitted to the Developer, to Google, or to any other party.</p>
 <p>By default the Application looks only at files in the user's own My Drive. Files and folders that other people have shared with the user are read only when the user selects those folders in the Application.</p>
-<p>The Application only reads Google Drive data. It does not create, modify, move, or delete any file in the user's Google Drive. Google Drive data is requested by the device directly from Google and is not transmitted to the Developer or to any other party.</p>
+<p>The Application only reads Google Drive data. It does not create, modify, move, or delete any file in the user's Google Drive. Google Drive data is requested by the device directly from Google and is not transmitted to the Developer. Except when the user chooses the external AI described in Section 3, it is not transmitted to any other party.</p>
 <p>The Application's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google Drive data is not used for advertising, is not sold, and is not read by any person.</p>
 
-<h2>3. Permissions and Their Purposes</h2>
+<h2>3. External AI (Only When Chosen by the User)</h2>
+<p>On the Application's AI classification screen, the user may add an external AI model (Claude by Anthropic or ChatGPT by OpenAI) with the user's own API key and choose it as the classification model. This feature is not used by default and works only after the user adds an external AI model and chooses it as the classification model.</p>
 <ol>
-<li>Internet access: to obtain authorization from Google and to read the list and contents of files in the user's Google Drive, and to download the list of on-device language models and, when the user chooses, a model file. These downloads contain no information about the user.</li>
+<li>Information sent: the titles of the books to be classified, part of the text at the beginning of those books (up to 80 characters per book), and the list of categories needed for the request. The user's Google account information, the book files themselves, and reading history are not sent.</li>
+<li>Recipient: the API of the company the user has chosen (Anthropic or OpenAI). The device sends requests directly to that company, without passing through the Developer. The information sent is handled under that company's privacy policy (<a href="https://www.anthropic.com/legal/privacy">Anthropic</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>) and the API terms the user has agreed to with that company.</li>
+<li>Purpose: to determine the categories of the books. The answers (categories) are stored only on the device.</li>
+<li>API key: encrypted with an Android Keystore key on the device and kept only in the Application's private storage; it is not transmitted to the Developer. Usage is billed to the account of the API key.</li>
+<li>Stopping: the user may at any time switch the classification model back to an on-device model or delete the external AI model, after which no information is sent. When all external AI models of a company are deleted, that company's API key is deleted too.</li>
 </ol>
 
-<h2>4. Information Stored on the Device and Its Deletion</h2>
+<h2>4. Permissions and Their Purposes</h2>
+<ol>
+<li>Internet access: to obtain authorization from Google and to read the list and contents of files in the user's Google Drive, and to download the list of on-device language models and, when the user chooses, a model file. These downloads contain no information about the user. When the user chooses the external AI described in Section 3, also to request classification from that AI.</li>
+</ol>
+
+<h2>5. Information Stored on the Device and Its Deletion</h2>
 <p>For its operation, the Application retains the following information solely in the Application's private storage on the user's device:</p>
 <ol>
-<li>The library: the file information described in Section 2(1), the categories assigned to each book, reading positions and progress, and bookmarks.</li>
+<li>The library: the file information described in Section 2(1), the text at the beginning of books, the categories assigned to each book, reading positions and progress, and bookmarks.</li>
 <li>Books that the user has downloaded, so that they can be read on the device, and cover images, kept as a cache to display the library quickly.</li>
 <li>Reader settings and whether Google Drive has been connected.</li>
+<li>The external AI settings described in Section 3 and the API key (stored encrypted).</li>
 </ol>
 <p>Application backup is disabled, and this information is therefore not copied to any cloud backup. The user may delete a downloaded book at any time by long-pressing it in the library, and may delete all such information at any time by clearing the Application's storage or by uninstalling the Application. Books that are no longer found in Google Drive are removed from the library 30 days after they disappear.</p>
 
-<h2>5. Revoking Access</h2>
+<h2>6. Revoking Access</h2>
 <p>The user may disconnect Google Drive within the Application at any time. The user may also revoke the Application's access to the Google account at any time on the <a href="https://myaccount.google.com/permissions">Google Account third-party access page</a>. After access is revoked, the Application can no longer read Google Drive data.</p>
 
-<h2>6. Disclosure to Third Parties</h2>
-<p>The Developer does not provide, sell, or transfer any information to third parties. Requests for authorization and for Google Drive data are sent only to Google and are handled under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<h2>7. Disclosure to Third Parties</h2>
+<p>The Developer does not provide, sell, or transfer any information to third parties. Requests for authorization and for Google Drive data are sent only to Google and are handled under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. However, when the user chooses the external AI described in Section 3, the device sends the information described in Section 3(1) directly to the AI company the user has chosen.</p>
 
-<h2>7. Children</h2>
+<h2>8. Children</h2>
 <p>The Application is not directed at children, and the Developer does not collect information from any person, including children.</p>
 
-<h2>8. Changes to This Policy</h2>
+<h2>9. Changes to This Policy</h2>
 <p>Any amendment to this Privacy Policy will be published on this page together with its effective date.</p>
 
-<h2>9. Contact</h2>
+<h2>10. Contact</h2>
 <p>Inquiries concerning this Privacy Policy may be directed to <a href="mailto:pqzmggg@gmail.com">pqzmggg@gmail.com</a>.</p>
 </main>
 </body>
