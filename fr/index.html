@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité de Pagora</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<nav><a href="../" hreflang="en">English</a> | <a href="../ko/" hreflang="ko">한국어</a> | Français | <a href="../hi/" hreflang="hi">हिन्दी</a></nav>
+<h1>Politique de confidentialité de Pagora</h1>
+<p class="meta">Date d'entrée en vigueur : 15 novembre 2026</p>
+<p class="meta">Ceci est une traduction ; en cas de divergence avec la version anglaise, la version anglaise prévaut.</p>
+
+<p>La présente Politique de confidentialité décrit la manière dont l'application Pagora pour Android (l'« Application »), développée par pqzmggg (le « Développeur »), traite les informations dans le cadre de son utilisation. L'Application organise en bibliothèque les livres aux formats PDF, EPUB et ZIP (CBZ) stockés dans les services de stockage que l'utilisateur connecte (Google Drive, Dropbox, OneDrive, ainsi que des serveurs WebDAV ou SFTP tels qu'un NAS) et les affiche pour la lecture.</p>
+
+<h2>1. Informations collectées par le Développeur</h2>
+<p>Le Développeur ne collecte ni ne reçoit aucune information personnelle des utilisateurs, et n'a accès à aucune d'entre elles. Le Développeur n'exploite aucun serveur pour l'Application, et l'Application ne requiert aucun compte autre que les propres comptes de l'utilisateur auprès des services de stockage qu'il choisit de connecter. Les informations décrites dans la présente Politique sont traitées sur l'appareil de l'utilisateur ou échangées directement entre l'appareil et les parties suivantes : les services de stockage que l'utilisateur connecte (sections 2 et 3), la société d'IA choisie par l'utilisateur (section 5), Google AdMob pour la bannière publicitaire (section 6) et Google Play pour les achats (section 7). L'Application ne contient aucun composant d'analyse ni de rapport de plantage qui lui soit propre.</p>
+
+<h2>2. Services de stockage et données des livres</h2>
+<p>Lorsque l'utilisateur connecte un service de stockage, l'Application se connecte par l'intermédiaire de ce service et reçoit un accès limité à ce dont elle a besoin :</p>
+<ol>
+<li>Google Drive : accès en lecture seule au Drive de l'utilisateur (<code>drive.readonly</code>). Si l'utilisateur active la synchronisation entre appareils (section 3), également un accès au dossier de données d'application masqué propre à l'Application (<code>drive.appdata</code>).</li>
+<li>Dropbox : accès en lecture aux métadonnées et au contenu des fichiers ainsi qu'aux informations de base du compte (<code>files.metadata.read</code>, <code>files.content.read</code>, <code>account_info.read</code>). Si l'utilisateur active la synchronisation entre appareils, également un accès en écriture (<code>files.content.write</code>), que l'Application utilise uniquement pour son propre dossier <code>/Apps/Pagora</code>.</li>
+<li>OneDrive : accès en lecture aux fichiers et aux informations de base du profil (<code>Files.Read</code>, <code>User.Read</code>, <code>offline_access</code>). Si l'utilisateur active la synchronisation entre appareils, également un accès au dossier d'application propre à l'Application (<code>Files.ReadWrite.AppFolder</code>).</li>
+<li>Serveurs WebDAV et SFTP : l'adresse du serveur, le nom d'utilisateur et le mot de passe saisis par l'utilisateur, ainsi que, pour SFTP, l'empreinte de la clé d'hôte du serveur confirmée par l'utilisateur.</li>
+</ol>
+<p>L'Application ne reçoit ni ne stocke le mot de passe Google, Dropbox ou Microsoft de l'utilisateur. Les jetons de connexion et les mots de passe des serveurs WebDAV et SFTP sont chiffrés au moyen d'une clé Android Keystore et conservés uniquement dans le stockage privé de l'Application sur l'appareil.</p>
+<p>Grâce à cet accès, l'Application utilise les données suivantes dans le seul but de fournir ses fonctionnalités à l'utilisateur :</p>
+<ol>
+<li>Les noms, emplacements de dossier, tailles, dates et heures de modification, sommes de contrôle et images miniatures des fichiers PDF, EPUB et ZIP (CBZ), ainsi que les noms et la structure des dossiers, dans les dossiers que l'utilisateur choisit d'analyser, afin de trouver les livres, de constituer la bibliothèque et de classer les livres par catégorie sur l'appareil.</li>
+<li>Le contenu des fichiers que l'utilisateur choisit de télécharger, afin de les conserver sur l'appareil et d'en afficher les pages. Lorsque l'utilisateur a lu la majeure partie d'un volume d'une série, l'Application peut télécharger à l'avance le volume suivant de la même série.</li>
+<li>Le début des fichiers PDF et des parties des fichiers EPUB et ZIP (CBZ) (pour les fichiers EPUB, les informations sur le livre telles que le titre, l'auteur et le sujet, l'image de couverture et le début du texte), afin de créer des images de couverture et de lire le texte figurant au début des livres pour les classer.</li>
+</ol>
+<p>Pour classer les livres dont la catégorie ne peut être déterminée à partir de leur nom de fichier, l'Application lit le texte figurant au début du livre (le texte contenu dans le PDF, les informations sur le livre et le texte de l'EPUB, ou le texte lu sur l'image de couverture par une reconnaissance de texte effectuée sur l'appareil) et peut fournir les titres des livres et ce texte à un modèle de langage embarqué que l'utilisateur choisit de télécharger. Ce traitement s'effectue entièrement sur l'appareil ; à moins que l'utilisateur ne choisisse une IA externe (section 5), les titres et le texte ne sont transmis ni au Développeur ni à aucune autre partie.</p>
+<p>Dans Google Drive, l'Application n'examine par défaut que les fichiers figurant dans l'espace Mon Drive propre à l'utilisateur ; les fichiers et dossiers que d'autres personnes ont partagés avec l'utilisateur ne sont lus que lorsque l'utilisateur sélectionne ces dossiers. L'Application ne crée, ne modifie, ne déplace ni ne supprime les fichiers de livres de l'utilisateur dans aucun service de stockage. Les données des livres sont demandées par l'appareil directement à chaque service de stockage et ne sont pas transmises au Développeur.</p>
+<p>L'utilisation par l'Application des informations reçues des API Google, et leur transfert vers toute autre application, respecteront les <a href="https://developers.google.com/terms/api-services-user-data-policy">Règles relatives aux données utilisateur des services d'API Google</a>, y compris les exigences d'utilisation limitée (Limited Use). Les données provenant des services de stockage ne sont pas utilisées à des fins publicitaires, ne sont pas vendues et ne sont lues par aucune personne.</p>
+
+<h2>3. Synchronisation entre appareils (uniquement si l'utilisateur l'active)</h2>
+<p>Pour chaque service de stockage connecté, l'utilisateur peut activer la synchronisation entre appareils afin que les positions de lecture, les signets et les catégories des livres restent identiques sur les autres appareils de l'utilisateur. Lorsqu'elle est activée, l'Application écrit de petits fichiers de synchronisation contenant ces informations (avec les identifiants de fichier et les titres des livres présents dans ce stockage et, avec les catégories, le texte lu au début de ces livres) dans un emplacement réservé à l'application au sein de ce même stockage : le dossier de données d'application masqué dans Google Drive, le dossier d'application dans OneDrive et Dropbox, ou un dossier <code>.pagora</code> à l'intérieur du dossier choisi par l'utilisateur sur un serveur WebDAV ou SFTP. Les fichiers de synchronisation ne sont échangés qu'entre les appareils de l'utilisateur et le propre stockage de l'utilisateur ; ils ne sont pas envoyés au Développeur. L'utilisateur peut désactiver la synchronisation à tout moment et peut supprimer les fichiers de synchronisation du stockage.</p>
+
+<h2>4. Modèles d'IA embarqués</h2>
+<p>Lorsque l'utilisateur le choisit, l'Application télécharge un modèle de langage embarqué et une liste des modèles disponibles. Ces téléchargements ne contiennent aucune information concernant l'utilisateur.</p>
+
+<h2>5. IA externe (uniquement si l'utilisateur la choisit)</h2>
+<p>Sur l'écran de classification par IA de l'Application, l'utilisateur peut ajouter un modèle d'IA externe avec sa propre clé API et le choisir comme modèle de classification : Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), Grok (xAI) ou EXAONE (LG AI Research). Cette fonctionnalité n'est pas utilisée par défaut.</p>
+<ol>
+<li>Informations envoyées : les titres des livres à classer, une partie du texte figurant au début de ces livres (jusqu'à 80 caractères par livre) et la liste des catégories nécessaires à la requête. Les informations de compte, les fichiers de livres eux-mêmes et l'historique de lecture ne sont pas envoyés.</li>
+<li>Destinataire : l'API de la société choisie par l'utilisateur. L'appareil envoie les requêtes directement à cette société, sans passer par le Développeur. Les informations envoyées sont traitées conformément à la politique de confidentialité de cette société (<a href="https://www.anthropic.com/legal/privacy">Anthropic</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://policies.google.com/privacy">Google</a>, <a href="https://x.ai/legal/privacy-policy">xAI</a>, <a href="https://www.lgresearch.ai/">LG AI Research</a>) et aux conditions d'utilisation de l'API que l'utilisateur a acceptées auprès de cette société. Dans le cadre de certaines offres gratuites, la société peut utiliser le contenu envoyé pour améliorer ses services (par exemple, l'offre gratuite de l'API Gemini en dehors de l'EEE, de la Suisse et du Royaume-Uni) ; l'Application en informe l'utilisateur lorsque Gemini est choisi.</li>
+<li>Finalité : déterminer les catégories des livres. Les réponses (catégories) sont stockées sur l'appareil et, si la synchronisation est activée, dans les fichiers de synchronisation décrits à la section 3.</li>
+<li>Clé API : chiffrée au moyen d'une clé Android Keystore sur l'appareil et conservée uniquement dans le stockage privé de l'Application ; elle n'est pas transmise au Développeur. L'utilisation est facturée au compte associé à la clé API.</li>
+<li>Arrêt : l'utilisateur peut à tout moment rétablir un modèle embarqué comme modèle de classification ou supprimer le modèle d'IA externe, après quoi aucune information n'est envoyée. Lorsque tous les modèles d'IA externes d'une société sont supprimés, la clé API de cette société est également supprimée.</li>
+</ol>
+
+<h2>6. Publicité (Google AdMob)</h2>
+<p>Sauf si l'utilisateur a acheté la suppression des publicités (section 7), l'Application affiche une bannière publicitaire en bas de ses écrans au moyen de Google AdMob, fourni par Google. Afin d'afficher, de limiter et de mesurer les annonces et de prévenir la fraude, le SDK Google Mobile Ads peut collecter et traiter des informations telles que l'identifiant publicitaire de l'appareil, l'adresse IP, des informations sur l'appareil et l'application, ainsi que les interactions avec les annonces. Ces informations sont envoyées directement de l'appareil à Google et ne sont pas envoyées au Développeur. L'Application ne fournit à AdMob aucune donnée de livre, aucun nom de fichier, aucun historique de lecture ni aucune information de compte de stockage.</p>
+<ol>
+<li>Consentement : dans les régions où le consentement est requis (telles que l'Espace économique européen, le Royaume-Uni et la Suisse), l'Application demande le consentement par l'intermédiaire de la User Messaging Platform de Google avant que des annonces ne soient demandées, et l'utilisateur peut modifier son choix à tout moment dans Paramètres &gt; Confidentialité des publicités.</li>
+<li>Annonces personnalisées : l'utilisateur peut réinitialiser ou supprimer l'identifiant publicitaire, ou refuser les annonces personnalisées, dans les paramètres de l'appareil (Paramètres &gt; Confidentialité &gt; Annonces, ou Google &gt; Annonces, selon l'appareil).</li>
+<li>Pour en savoir plus : <a href="https://policies.google.com/technologies/partner-sites">Comment Google utilise les informations des sites ou applications qui utilisent ses services</a> et les <a href="https://policies.google.com/privacy">Règles de confidentialité de Google</a>.</li>
+</ol>
+
+<h2>7. Achats (Google Play)</h2>
+<p>L'utilisateur peut acheter « Supprimer les annonces », un produit intégré à l'application faisant l'objet d'un achat unique, via Google Play Billing. Le paiement est entièrement traité par Google Play conformément aux <a href="https://policies.google.com/privacy">Règles de confidentialité de Google</a> ; l'Application et le Développeur ne reçoivent aucune information de paiement. L'Application demande uniquement à Google Play si l'achat existe pour le compte Google de l'utilisateur, afin de masquer les annonces, et conserve le résultat sur l'appareil.</p>
+
+<h2>8. Autorisations et leurs finalités</h2>
+<ol>
+<li>Accès à Internet : pour se connecter aux services de stockage que l'utilisateur connecte et y lire des données, pour écrire les fichiers de synchronisation lorsque la synchronisation est activée, pour télécharger des modèles d'IA embarqués, pour demander une classification à une IA externe lorsqu'elle est choisie, pour afficher des annonces et pour vérifier les achats.</li>
+<li>Service de premier plan (synchronisation des données) et notifications : pour poursuivre le téléchargement d'un modèle d'IA ou la classification de la bibliothèque pendant que l'utilisateur se trouve dans d'autres applications, avec une notification de progression comportant un bouton Arrêter.</li>
+<li>Identifiant publicitaire : utilisé par le SDK Google Mobile Ads comme décrit à la section 6.</li>
+<li>Google Play Billing : pour acheter et vérifier l'achat « Supprimer les annonces ».</li>
+</ol>
+
+<h2>9. Informations stockées sur l'appareil et leur suppression</h2>
+<p>Pour son fonctionnement, l'Application conserve les informations suivantes uniquement dans le stockage privé de l'Application sur l'appareil de l'utilisateur :</p>
+<ol>
+<li>La bibliothèque : les informations sur les fichiers décrites à la section 2, le texte figurant au début des livres, les catégories attribuées à chaque livre, les positions et la progression de lecture, ainsi que les signets.</li>
+<li>Les livres que l'utilisateur a téléchargés et les images de couverture, conservés en cache.</li>
+<li>Les paramètres, les comptes de stockage connectés avec leurs jetons de connexion et mots de passe chiffrés, les paramètres d'IA externe et les clés API chiffrées, le choix de consentement publicitaire, ainsi que l'indication de l'achat ou non de la suppression des publicités.</li>
+</ol>
+<p>La sauvegarde de l'Application est désactivée ; ces informations ne sont donc copiées dans aucune sauvegarde dans le cloud. L'utilisateur peut à tout moment supprimer les livres téléchargés sur la page Téléchargements (le menu en haut à droite de la bibliothèque), peut déconnecter un service de stockage (ce qui supprime ses livres et ses enregistrements de l'appareil) et peut supprimer toutes les informations à tout moment en effaçant le stockage de l'Application ou en désinstallant l'Application. Les livres qui ne sont plus trouvés dans le stockage sont retirés de la bibliothèque 30 jours après leur disparition.</p>
+
+<h2>10. Révocation de l'accès</h2>
+<p>L'utilisateur peut à tout moment déconnecter n'importe quel service de stockage dans l'Application. L'utilisateur peut également révoquer l'accès de l'Application sur la <a href="https://myaccount.google.com/permissions">page des accès tiers du compte Google</a>, dans les <a href="https://www.dropbox.com/account/connected_apps">applications connectées de Dropbox</a> ou sur la <a href="https://account.live.com/consent/Manage">page Applications et services du compte Microsoft</a>.</p>
+
+<h2>11. Communication à des tiers</h2>
+<p>Le Développeur ne fournit, ne vend ni ne transfère aucune information à des tiers. Les informations sont échangées directement entre l'appareil et uniquement les parties décrites dans la présente Politique : les services de stockage que l'utilisateur connecte, la société d'IA choisie par l'utilisateur (section 5), Google AdMob (section 6) et Google Play (section 7), chacune selon sa propre politique de confidentialité.</p>
+
+<h2>12. Enfants</h2>
+<p>L'Application ne s'adresse pas aux enfants, et le Développeur ne collecte d'informations auprès d'aucune personne, y compris les enfants.</p>
+
+<h2>13. Modifications de la présente Politique</h2>
+<p>Toute modification de la présente Politique de confidentialité sera publiée sur cette page avec sa date d'entrée en vigueur.</p>
+
+<h2>14. Contact</h2>
+<p>Les demandes concernant la présente Politique de confidentialité peuvent être adressées à <a href="mailto:pqzmggg@gmail.com">pqzmggg@gmail.com</a>.</p>
+</main>
+</body>
+</html>
