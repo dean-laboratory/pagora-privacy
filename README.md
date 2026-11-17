@@ -4,6 +4,10 @@ GitHub Pages site for the Pagora app's privacy policy.
 
 - English: https://dean-laboratory.github.io/pagora-privacy/ (`index.html`)
 - Korean: https://dean-laboratory.github.io/pagora-privacy/ko/ (`ko/index.html`)
+- French: https://dean-laboratory.github.io/pagora-privacy/fr/ (`fr/index.html`)
+- Hindi: https://dean-laboratory.github.io/pagora-privacy/hi/ (`hi/index.html`)
+
+The English page is authoritative; translations say so under the effective date. Change all pages together.
 
 Pages setting: Deploy from a branch, `main`, `/ (root)`.
 
