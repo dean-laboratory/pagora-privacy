@@ -20,7 +20,7 @@
 <h2>제2조 (저장소 및 책 정보)</h2>
 <p>이용자가 저장소를 연결하면 앱은 그 서비스의 로그인 절차를 거쳐 필요한 만큼의 권한만 받습니다.</p>
 <ol>
-<li>Google 드라이브: 책 저장소로 연결하면 드라이브 읽기 전용 권한(<code>drive.readonly</code>). 이용자가 기기 간 동기화(제3조)를 켜면, Google 드라이브를 책 저장소로 연결했는지와 상관없이 이용자 Google 계정의 앱 전용 숨김 데이터 폴더 권한(<code>drive.appdata</code>)을 받습니다. 두 권한은 따로 요청합니다.</li>
+<li>Google 드라이브: 책 저장소로 연결하면 드라이브 읽기 전용 권한(<code>drive.readonly</code>). 이용자가 기기 간 동기화(제3조)를 켜면, Google 드라이브를 책 저장소로 연결했는지와 상관없이 이용자 Google 계정의 앱 전용 숨김 데이터 폴더 권한(<code>drive.appdata</code>)을 받습니다. 두 권한은 따로 요청합니다. 어느 쪽이든 동기화에 쓰는 Google 계정을 보여 주기 위해 계정 메일 주소(<code>email</code>)도 받으며, 이 주소는 기기에만 둡니다.</li>
 <li>Dropbox: 파일 정보·내용 읽기 및 기본 계정 정보 권한(<code>files.metadata.read</code>, <code>files.content.read</code>, <code>account_info.read</code>).</li>
 <li>OneDrive: 파일 읽기 및 기본 프로필 권한(<code>Files.Read</code>, <code>User.Read</code>, <code>offline_access</code>).</li>
 <li>WebDAV·SFTP 서버: 이용자가 입력한 서버 주소, 사용자 이름, 비밀번호, 그리고 SFTP의 경우 이용자가 확인한 서버의 호스트 키 지문.</li>
