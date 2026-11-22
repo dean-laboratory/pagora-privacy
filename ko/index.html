@@ -21,8 +21,8 @@
 <p>이용자가 저장소를 연결하면 앱은 그 서비스의 로그인 절차를 거쳐 필요한 만큼의 권한만 받습니다.</p>
 <ol>
 <li>Google 드라이브: 책 저장소로 연결하면 드라이브 읽기 전용 권한(<code>drive.readonly</code>). 이용자가 기기 간 동기화(제3조)를 켜면, Google 드라이브를 책 저장소로 연결했는지와 상관없이 이용자 Google 계정의 앱 전용 숨김 데이터 폴더 권한(<code>drive.appdata</code>)을 받습니다. 두 권한은 따로 요청합니다.</li>
-<li>Dropbox: 파일 정보·내용 읽기 및 기본 계정 정보 권한(<code>files.metadata.read</code>, <code>files.content.read</code>, <code>account_info.read</code>). 이전 판 앱에서 동기화를 켠 계정은 앱 전용 폴더 <code>/Apps/Pagora</code>의 쓰기 권한(<code>files.content.write</code>)도 허용했으며, 앱은 이 권한을 이전 판이 그 폴더에 남긴 동기화 파일을 한 번 읽는 데에만 사용합니다(제3조).</li>
-<li>OneDrive: 파일 읽기 및 기본 프로필 권한(<code>Files.Read</code>, <code>User.Read</code>, <code>offline_access</code>). 이전 판 앱에서 동기화를 켠 계정은 앱 전용 폴더 권한(<code>Files.ReadWrite.AppFolder</code>)도 허용했으며, 앱은 이 권한을 이전 판이 그 폴더에 남긴 동기화 파일을 한 번 읽는 데에만 사용합니다(제3조).</li>
+<li>Dropbox: 파일 정보·내용 읽기 및 기본 계정 정보 권한(<code>files.metadata.read</code>, <code>files.content.read</code>, <code>account_info.read</code>).</li>
+<li>OneDrive: 파일 읽기 및 기본 프로필 권한(<code>Files.Read</code>, <code>User.Read</code>, <code>offline_access</code>).</li>
 <li>WebDAV·SFTP 서버: 이용자가 입력한 서버 주소, 사용자 이름, 비밀번호, 그리고 SFTP의 경우 이용자가 확인한 서버의 호스트 키 지문.</li>
 </ol>
 <p>앱은 이용자의 Google, Dropbox, Microsoft 비밀번호를 받거나 저장하지 않습니다. 로그인 토큰과 WebDAV·SFTP 서버의 비밀번호는 Android Keystore 키로 암호화하여 기기의 앱 전용 저장 공간에만 보관합니다.</p>
@@ -38,7 +38,6 @@
 
 <h2>제3조 (기기 간 동기화, 이용자가 켠 경우에만)</h2>
 <p>이용자는 기기 간 동기화를 켜서 읽던 위치, 책갈피, 쪽 위 메모, 독서 기록(책마다 날마다 읽은 시간과 새로 본 쪽 수, 다 읽은 때), 책의 분류를 이용자의 다른 기기와 맞출 수 있습니다. 동기화를 켜려면 이용자 Google 계정의 앱 전용 숨김 데이터 폴더 권한(<code>drive.appdata</code>)이 필요합니다. Google 드라이브를 책 저장소로 연결하지 않아도 되며, 이 권한으로는 이용자의 다른 Google 드라이브 파일을 볼 수 없습니다. 동기화를 켜면 앱은 이 정보(책의 파일 식별자, 이름, 크기와 제목, 그리고 분류와 함께 책 앞부분에서 읽은 글자)를 담은 작은 동기화 파일을 이 숨김 폴더에 씁니다. Dropbox, OneDrive, WebDAV, SFTP 서버, 기기의 폴더 등 어느 저장소에 있는 책이든 그 기록은 이용자 Google 계정의 이 폴더 한 곳에 저장됩니다. 동기화 파일은 이용자 본인의 Google 계정에만 두며 공유 드라이브에는 두지 않고, 이용자의 기기와 이 폴더 사이에서만 오가며 개발자에게 전송되지 않습니다.</p>
-<p>이전 판 앱은 동기화 파일을 책이 있는 저장소마다 두었습니다(OneDrive와 Dropbox의 앱 폴더, WebDAV, SFTP 서버에서는 이용자가 고른 폴더 안의 <code>.pagora</code> 폴더). 동기화를 켜면 앱은 이 파일을 한 번 읽어 기기에 반영하고, 더 이상 쓰지 않습니다. WebDAV, SFTP 서버의 폴더는 다른 사람과 함께 쓸 수 있으므로, 앱은 그곳의 파일을 읽기 전에 이용자에게 묻습니다.</p>
 <p>이용자는 언제든 동기화를 끌 수 있고, Google 드라이브 설정의 앱 관리에서 숨김 앱 데이터를 지울 수 있습니다.</p>
 
 <h2>제4조 (기기 안 AI 모델)</h2>
