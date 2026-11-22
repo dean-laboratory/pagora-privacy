@@ -20,7 +20,7 @@
 <h2>2. Storage Services and Book Data</h2>
 <p>When the user connects a storage service, the Application signs in through that service and receives access limited to what it needs:</p>
 <ol>
-<li>Google Drive: if the user connects Google Drive as a storage service, read-only access to the user's Drive (<code>drive.readonly</code>). If the user turns on sync across devices (Section 3), access to the Application's own hidden app data folder in the user's Google Account (<code>drive.appdata</code>), whether or not Google Drive is connected as a storage service. These two permissions are requested separately.</li>
+<li>Google Drive: if the user connects Google Drive as a storage service, read-only access to the user's Drive (<code>drive.readonly</code>). If the user turns on sync across devices (Section 3), access to the Application's own hidden app data folder in the user's Google Account (<code>drive.appdata</code>), whether or not Google Drive is connected as a storage service. These two permissions are requested separately. With either, the Application also receives the account's email address (<code>email</code>) to show which Google Account sync uses; it is kept only on the device.</li>
 <li>Dropbox: read access to file metadata and contents and basic account information (<code>files.metadata.read</code>, <code>files.content.read</code>, <code>account_info.read</code>).</li>
 <li>OneDrive: read access to files and basic profile information (<code>Files.Read</code>, <code>User.Read</code>, <code>offline_access</code>).</li>
 <li>WebDAV and SFTP servers: the server address, user name, and password the user enters, and for SFTP the server's host key fingerprint that the user confirms.</li>
